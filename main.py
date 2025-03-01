@@ -62,7 +62,6 @@ def apply(src: Analyzer, block: Block, seq):
     # Update the image with the transformed payload
     src.set_payload(dst_payload)
 
-
 if __name__ == "__main__":
     # Parse command-line arguments
     src = sys.argv[1]   # Source image
@@ -71,8 +70,8 @@ if __name__ == "__main__":
     opcode = sys.argv[4] # Operation mode: "generator" or "solver"
 
     # Define block size
-    b_width = 250
-    b_height = 250
+    b_width = 50
+    b_height = 50
 
     # Initialize random seed
     random.seed(seed)
