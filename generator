@@ -54,4 +54,4 @@ echo "[+] Output file $puzzle"
 
 echo "[+] Complete."
 
-display $puzzle
+#display $puzzle

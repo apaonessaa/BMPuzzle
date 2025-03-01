@@ -48,4 +48,4 @@ echo "[+] Output file $res"
 
 echo "[+] Complete."
 
-display $res
+#display $res
