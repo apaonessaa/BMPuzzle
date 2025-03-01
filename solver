@@ -1,0 +1,51 @@
+#!/usr/bin/bash
+
+USAGE="$0 <puzzle> [-k <key>]"
+
+puzzle=$1
+shift 1
+
+# Validate image files
+if [[ ! -f $puzzle ]]; then
+    echo "[-] The image $puzzle does not exist."
+    exit 1
+fi
+
+# Defualt values
+key=""
+
+# Parse options
+OPTIONS="k:"
+while getopts $OPTIONS opt; do
+    case $opt in
+        k) key=$OPTARG ;;
+        :)
+            echo "[-] Option -$OPTARG requires an argument."
+            exit 1
+            ;;
+        \?)
+            echo "[-] Invalid option: -$OPTARG."
+            echo "$USAGE"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z "$key" ]]; then
+    echo "[-] Invalid value for -k. Use a key."
+    exit 1
+fi
+
+index=$(ls ./results/ | wc -l)
+
+res="./results/result_$index.bmp"
+
+echo "" > $res
+
+python3 main.py $puzzle $res $key "solver"
+
+echo "[+] Output file $res"
+
+echo "[+] Complete."
+
+display $res

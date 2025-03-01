@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+USAGE="$0 <image> [-k <key>]"
+
+src=$1
+shift 1
+
+# Validate image files
+if [[ ! -f $src ]]; then
+    echo "[-] The image $src does not exist."
+    exit 1
+fi
+
+# Defualt values
+key=""
+
+# Parse options
+OPTIONS="k:"
+while getopts $OPTIONS opt; do
+    case $opt in
+        k) key=$OPTARG ;;
+        :)
+            echo "[-] Option -$OPTARG requires an argument."
+            exit 1
+            ;;
+        \?)
+            echo "[-] Invalid option: -$OPTARG."
+            echo "$USAGE"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z "$key" ]]; then
+    echo "[-] Invalid value for -k. Use a key."
+    exit 1
+fi
+
+# Convert .bmp format
+# check if it is already a BMP file TODO
+# otherwise...
+#convert "$src" "$src.bmp"
+#echo "[+] Source Image $src.bmp converted to BMP format"
+
+index=$(ls ./puzzles/| wc -l)
+
+puzzle="./puzzles/puzzle_$index.bmp"
+
+echo "" > $puzzle
+
+python3 main.py $src $puzzle $key "generator"
+
+echo "[+] Output file $puzzle"
+
+echo "[+] Complete."
+
+display $puzzle

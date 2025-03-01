@@ -28,6 +28,9 @@ def build_puzzle_seq(block: Block, win_seq):
         puzzle[win_seq[i]] = i
     return puzzle
 
+#
+#
+#
 def apply(src: Analyzer, block: Block, seq):
     # Retrieve src image properties
     #width, height = src.get_size()
@@ -63,7 +66,10 @@ if __name__ == "__main__":
     src = sys.argv[1]
     out = sys.argv[2]
     seed = sys.argv[3]
-    flag = False
+    opcode = sys.argv[4]
+
+    b_width=250
+    b_height=250
 
     random.seed(seed)
 
@@ -72,17 +78,37 @@ if __name__ == "__main__":
     with open(src, "rb") as src:
         a1 = Analyzer(src.read())
 
+    print()
+    print("="*50)
+    print(f"Puzzle {opcode}")
+    print("-"*50)
+    print(f"Image width, height: {a1.get_size()}")
+    print(f"Pixel array size: {a1.get_payload_size()}")
+    print(f"Bpp: {a1.get_Bpp()}")
+    print(f"Seed: {seed}")
+    print(f"Block width, height: {b_width}, {b_height}")
+    print("="*50)
+    print()
+
     # Build block
-    block = Block(a1, b_width=250, b_height=250)
+    block = Block(a1, b_width, b_height)
 
     _, _, n = block.get_num()
     sequence = random.sample(range(n),n)
-    print(f'Sequence: {sequence}')
     
+    print("="*50)
     # Builder win seq
-    if flag:
+    if opcode == "generator":
         sequence = build_puzzle_seq(block, sequence)        
         print(f'Win sequence: {sequence}')
+    elif opcode == "solver":
+        print(f'Sequence: {sequence}')
+    else:
+        print("*"*20)
+        print(f"Error with {opcode}.")
+        print("*"*20)
+        sys.exit(1)
+    print("="*50+"\n")
 
     apply(a1, block, sequence)
 
