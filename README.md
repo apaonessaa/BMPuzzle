@@ -43,7 +43,12 @@ Example:
 This reconstructs the original image and saves it inside the `results/` directory.
 
 ## Example Execution
-_A demo video will be included here to showcase how the tool works._
+
+
+
+https://github.com/user-attachments/assets/060a9dab-08fc-475f-905b-7ae943332c39
+
+
 
 ## Upcoming Features
 - **Custom Block Size:** Allow users to specify block dimensions. (Must be multiples of the input image dimensions.)
