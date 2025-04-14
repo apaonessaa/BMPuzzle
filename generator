@@ -48,7 +48,7 @@ puzzle="./puzzles/puzzle_$index.bmp"
 
 echo "" > $puzzle
 
-python3 main.py $src $puzzle $key "generator"
+python3 main.py "$src" "$puzzle" "$key" "generator"
 
 echo "[+] Output file $puzzle"
 

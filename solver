@@ -42,7 +42,7 @@ res="./results/result_$index.bmp"
 
 echo "" > $res
 
-python3 main.py $puzzle $res $key "solver"
+python3 main.py "$puzzle" "$res" "$key" "solver"
 
 echo "[+] Output file $res"
 
