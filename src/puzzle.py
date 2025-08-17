@@ -26,7 +26,7 @@ class Puzzle():
     #       3: 2                      0 : 3
     #       4: 1                      2 : 4
 
-    def __init__(self, src: str, b_height: int, b_width: int, debug: bool=False):
+    def __init__(self, src: str, b_width: int, b_height: int, debug: bool=False):
         # Open and analyze the source image
         with open(src, "rb") as src:
             self.analyzer = Analyzer(src.read())

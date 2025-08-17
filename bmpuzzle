@@ -22,7 +22,7 @@ if __name__ == "__main__":
                         help="Secret value (integer value)",
                         type=int, required=True)
     common.add_argument("-b", "--block-size",
-                        help="Block size in pixels, format 'heightxwidth' (must evenly divide the image size)",
+                        help="Block size in pixels, format 'widthxheight' (must evenly divide the image size)",
                         type=str)
     common.add_argument("-d", "--debug",
                         help="Debug",
@@ -41,10 +41,10 @@ if __name__ == "__main__":
     secret = args.secret
 
     if args.block_size is not None:
-        b_height, b_width = args.block_size.split("x")
-        b_height, b_width = int(b_height), int(b_width)
+        b_width, b_height = args.block_size.split("x")
+        b_width, b_height = int(b_width), int(b_height)
     else:
-        b_height, b_width = -1, -1
+        b_width, b_height = -1, -1
 
     """
     print(src)
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     # Launch
     status_code = 1
-    bmpuzzle = Puzzle(src, b_height, b_width, args.debug)
+    bmpuzzle = Puzzle(src, b_width, b_height, args.debug)
     if args.command == "generator":
         status_code = bmpuzzle.run(Mode.GENERATOR, out, secret)
     elif args.command == "solver":

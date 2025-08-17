@@ -24,7 +24,7 @@ class Analyzer:
         # [+] size:             4 bytes
         width = int.from_bytes(self.raw_image[18:22], byteorder='little')
         height = int.from_bytes(self.raw_image[22:26], byteorder='little')
-        return height, width
+        return width, height
 
     def get_bpp(self):
         # bitmap image bpp (bits per pixel)
@@ -43,7 +43,7 @@ class Analyzer:
         # bitmap image row size in pixel
         # [+] width, image width expressed in pixels
         # [+] bpp, bits per pixel
-        _, width = self.get_size()
+        width, _ = self.get_size()
         bpp = self.get_bpp()
         return bpp * width
     
@@ -56,7 +56,7 @@ class Analyzer:
         # bitmap image size in pixel, pixel array size
         # rawdata + padding
         rowsize = self.get_rowsize_Bpp() + self.get_padding()
-        height, _ = self.get_size()
+        _, height = self.get_size()
         return height * rowsize
     
     def get_payload(self):
@@ -102,7 +102,7 @@ class Analyzer:
         #   (3) Apply mod 4 to prevent a full 4-byte padding block (unnecessary)
         #
         # If the row size is already a multiple of 4, the formula ensures padding = 0.
-        _, width = self.get_size()
+        width, _ = self.get_size()
         Bpp = self.get_Bpp()
         row_padding = (4 - (width * Bpp) % 4)  
         return row_padding % 4  
@@ -129,4 +129,3 @@ class Analyzer:
                 t_channel += t_Bpp
         self.set_payload(t_payload)
         return self
-

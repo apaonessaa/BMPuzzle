@@ -5,13 +5,13 @@ class Block:
         """
         Initializes the Block class, dividing the image into blocks of size (b_width, b_height).
         """
-        if analyzer is None and b_width > 0 and b_height > 0:
+        if analyzer is None and b_width <= 0 and b_height <= 0:
             raise RuntimeError()
 
-        height, width = analyzer.get_size()
+        width, height = analyzer.get_size()
 
         # Check if the block size is compatible with image size
-        if height % b_height > 0 or width % b_width > 0:
+        if (height < b_height and height % b_height > 0) or (width < b_width and width % b_width > 0):
             raise RuntimeError()
         
         self.analyzer = analyzer
@@ -32,7 +32,7 @@ class Block:
 
     def get_location(self, index):
         """ Returns the pixel start coordinates of the block at the given index. """
-        _, width = self.analyzer.get_size()
+        width, _ = self.analyzer.get_size()
         b_row = (index // self.ncols) * self.b_height * width  # Row start position
         b_col = (index % self.ncols) * self.b_width            # Column start position
         return b_row, b_col

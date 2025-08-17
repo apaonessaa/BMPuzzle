@@ -25,7 +25,7 @@ Flags:
                         Secret value (integer value)
   
   -b BLOCK_SIZE, --block-size BLOCK_SIZE
-                        Block size in pixels, format 'heightxwidth' (must evenly divide the image size)
+                        Block size in pixels, format 'widthxheight' (must evenly divide the image size)
   
   -d, --debug           Debug
 
@@ -35,7 +35,7 @@ Flags:
 
 ```bash
 
-./bmpuzzle generator --input [source image] --output [output image] --secret [secret value] --block-size <block size [heightxwidth]>
+./bmpuzzle generator --input [source image] --output [output image] --secret [secret value] --block-size <block size [widthxheight]>
 
 ```
 
@@ -53,7 +53,7 @@ An example:
 
 ```bash
 
-./bmpuzzle solver --input [source image] --output [output image] --secret [secret value] --block-size <block size [heightxwidth]>
+./bmpuzzle solver --input [source image] --output [output image] --secret [secret value] --block-size <block size [widthxheight]>
 
 ```
 
