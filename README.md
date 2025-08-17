@@ -2,6 +2,10 @@
 
 BMPuzzle is a command-line tool that transforms BMP images into puzzles and solves them. The project is based on the concept of shuffling image blocks using a predefined sequence and then reconstructing the original image. It relies on the `Analyzer` module from the [apaonessaa/LSBmp](https://github.com/apaonessaa/LSBmp) repository for handling BMP file operations.
 
+<p align="center">
+  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
+</p>
+
 ### Usage
 
 ```bash
@@ -30,10 +34,6 @@ Flags:
   -d, --debug           Debug
 
 ```
-
-<p align="center">
-  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
-</p>
 
 ### Generate a Puzzle
 
