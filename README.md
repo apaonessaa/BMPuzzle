@@ -31,7 +31,9 @@ Flags:
 
 ```
 
-<img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
+<p align="center">
+  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
+</p>
 
 ### Generate a Puzzle
 
