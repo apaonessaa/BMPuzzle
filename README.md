@@ -31,6 +31,8 @@ Flags:
 
 ```
 
+<img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
+
 ### Generate a Puzzle
 
 ```bash
@@ -47,7 +49,7 @@ An example:
 
 ```
 
-[photo]
+https://github.com/user-attachments/assets/b52b562a-79f6-4873-8de5-9a6a66fa6e12
 
 ### Solve a Puzzle
 
@@ -65,11 +67,7 @@ An example:
 
 ```
 
-[photo]
-
-### Example Execution
-
-[video]
+https://github.com/user-attachments/assets/748a0b27-24b4-4008-bbe0-5cd76adb51d8
 
 ### TODO
 
