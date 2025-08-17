@@ -2,57 +2,78 @@
 
 BMPuzzle is a command-line tool that transforms BMP images into puzzles and solves them. The project is based on the concept of shuffling image blocks using a predefined sequence and then reconstructing the original image. It relies on the `Analyzer` module from the [apaonessaa/LSBmp](https://github.com/apaonessaa/LSBmp) repository for handling BMP file operations.
 
-## Features
-- **Puzzle Generator:** Splits a BMP image into shuffled blocks based on a seed.
-- **Puzzle Solver:** Reconstructs the original image from the shuffled blocks.
-- **Custom Key Support:** Uses a user-defined key to generate a consistent puzzle sequence.
-- **BMP Format Handling:** Ensures compatibility with BMP image format.
-
-## Dependencies
-- Python 3
-- Optional: ImageMagick (for image format conversion and previewing results)
-
-## Installation
-Clone the repository and install the required dependencies:
+### Usage
 
 ```bash
-git clone https://github.com/yourusername/BMPuzzle.git
-cd BMPuzzle
-```
 
-## Usage
+BMPuzzle mode [-h] -i INPUT -o OUTPUT -s SECRET [-b BLOCK_SIZE] [-d]
+
+Modes:
+    generator
+    solver
+
+Flags:
+  -h, --help            show this help message and exit
+
+  -i INPUT, --input INPUT
+                        Source Image filename
+  
+  -o OUTPUT, --output OUTPUT
+                        Output Image filename
+  
+  -s SECRET, --secret SECRET
+                        Secret value (integer value)
+  
+  -b BLOCK_SIZE, --block-size BLOCK_SIZE
+                        Block size in pixels, format 'heightxwidth' (must evenly divide the image size)
+  
+  -d, --debug           Debug
+
+```
 
 ### Generate a Puzzle
+
 ```bash
-./generator <image.bmp> -k <key>
+
+./bmpuzzle generator --input [source image] --output [output image] --secret [secret value] --block-size <block size [heightxwidth]>
+
 ```
-Example:
+
+An example:
+
 ```bash
-./generator images/tiger.bmp -k secret
+
+./bmpuzzle generator --input images/lena.bmp --output puzzles/100x100.bmp --secret 1234567890 --block-size 100x100
+
 ```
-This will generate a shuffled puzzle image inside the `puzzles/` directory.
+
+[photo]
 
 ### Solve a Puzzle
+
 ```bash
-./solver <puzzle.bmp> -k <key>
+
+./bmpuzzle solver --input [source image] --output [output image] --secret [secret value] --block-size <block size [heightxwidth]>
+
 ```
-Example:
+
+An example:
+
 ```bash
-./solver puzzles/puzzle_0.bmp -k secret
+
+./bmpuzzle solver --input puzzles/100x100.bmp --output results/100x100.bmp --secret 1234567890 --block-size 100x100
+
 ```
-This reconstructs the original image and saves it inside the `results/` directory.
 
-## Example Execution
-_A demo video will be included here to showcase how the tool works._
+[photo]
 
-## Upcoming Features
-- **Custom Block Size:** Allow users to specify block dimensions. (Must be multiples of the input image dimensions.)
-- **Input Validation:** Handle errors related to incompatible block sizes and image dimensions.
-- **Enhanced Error Handling:** Improve feedback for invalid inputs and missing dependencies.
+### Example Execution
 
-## License
-This project is open-source and available under the MIT License.
+[video]
+
+### TODO
+
+- DEBUG info
+- Data validation
 
 ---
-
-For any issues or feature requests, feel free to open an issue on the repository.

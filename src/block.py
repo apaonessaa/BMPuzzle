@@ -1,4 +1,4 @@
-from analyzer import Analyzer
+from src.analyzer import Analyzer
 
 class Block:    
     def __init__(self, analyzer: Analyzer, b_width: int, b_height: int):

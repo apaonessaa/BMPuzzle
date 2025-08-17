@@ -1,28 +1,31 @@
 #!/usr/bin/python3
 from argparse import ArgumentParser
 
-from bmpuzzle import Mode, BMPuzzle
+from src.puzzle import Mode, Puzzle
 
 if __name__ == "__main__":
     # Command-line arguments parser
-    parser = ArgumentParser(prog="BMPuzzle")
+    parser = ArgumentParser(
+        prog="BMPuzzle", 
+        description="BMP puzzle generator and solver tool.",
+        epilog="Example: ./bmpuzzle generator --input input.bmp --output puzzle.bmp --secret 1234567890 --block-size 100x100")
 
     # Common args (parent parser)
     common = ArgumentParser(add_help=False)
     common.add_argument("-i", "--input",
-                        help="-i, --input [file]               Source Image filename",
+                        help="Source Image filename",
                         type=str, required=True)
     common.add_argument("-o", "--output",
-                        help="-o, --output [file]              Output Image filename",
+                        help="Output Image filename",
                         type=str, required=True)
     common.add_argument("-s", "--secret",
-                        help="-s, --secret [number]            Secret",
+                        help="Secret value (integer value)",
                         type=int, required=True)
     common.add_argument("-b", "--block-size",
-                        help="-b, --block-size [height]x[width] Define the block size (pixel) of the puzzle",
+                        help="Block size in pixels, format 'heightxwidth' (must evenly divide the image size)",
                         type=str)
     common.add_argument("-d", "--debug",
-                        help="-d, --debug                      Debug",
+                        help="Debug",
                         action="store_true")
 
     # Subparsers
@@ -43,14 +46,16 @@ if __name__ == "__main__":
     else:
         b_height, b_width = -1, -1
 
+    """
     print(src)
     print(out)
     print(secret)
     print(f'{b_height}x{b_width}')
+    """
 
     # Launch
     status_code = 1
-    bmpuzzle = BMPuzzle(src, b_height, b_width, args.debug)
+    bmpuzzle = Puzzle(src, b_height, b_width, args.debug)
     if args.command == "generator":
         status_code = bmpuzzle.run(Mode.GENERATOR, out, secret)
     elif args.command == "solver":

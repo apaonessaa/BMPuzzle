@@ -2,12 +2,12 @@
 from enum import Enum
 import random
 
-from analyzer import Analyzer
-from block import Block
+from src.analyzer import Analyzer
+from src.block import Block
 
 class Mode(Enum): GENERATOR=1; SOLVER=2; 
 
-class BMPuzzle():
+class Puzzle():
     # The challenge is won if the seed is set to ':flag' and 'out.bmp' is built from the 'win' sequence.
     # The ':win' sequence is predefined and generated from ':seed' (via a Pseudo-Random Generator - PRG).
     # From this sequence, we define 'puzzle.bmp' such that:
