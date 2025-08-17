@@ -71,6 +71,10 @@ An example:
 
 https://github.com/user-attachments/assets/748a0b27-24b4-4008-bbe0-5cd76adb51d8
 
+### Tests
+
+The secret used to generate the puzzles in the folder with the same name is `1234567890`.
+
 ### TODO
 
 - DEBUG info
