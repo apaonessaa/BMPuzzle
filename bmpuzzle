@@ -23,7 +23,7 @@ if __name__ == "__main__":
                         type=int, required=True)
     common.add_argument("-b", "--block-size",
                         help="block size in pixels, format 'widthxheight' (must evenly divide the image size)",
-                        type=str)
+                        type=str, required=True)
     common.add_argument("-d", "--debug",
                         help="debug",
                         action="store_true")
