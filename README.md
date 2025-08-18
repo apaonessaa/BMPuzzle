@@ -38,18 +38,18 @@ Flags:
   -h, --help            show this help message and exit
 
   -i INPUT, --input INPUT
-                        Source Image filename
+                        source Image filename
   
   -o OUTPUT, --output OUTPUT
-                        Output Image filename
+                        output Image filename
   
   -s SECRET, --secret SECRET
-                        Secret value (integer value)
+                        secret value (integer value)
   
   -b BLOCK_SIZE, --block-size BLOCK_SIZE
-                        Block size in pixels, format 'widthxheight' (must evenly divide the image size)
+                        block size in pixels, format 'widthxheight' (must evenly divide the image size)
   
-  -d, --debug           Debug
+  -d, --debug           debug
 
 ```
 
