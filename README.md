@@ -4,6 +4,10 @@
 
 The core idea is to split the image into blocks, shuffle them according to a sequence generated from a **secret**, and then use the same secret to reconstruct the original image.
 
+<p align="center">
+  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
+</p>
+
 #### How it works
 1. The image is divided into square blocks.
 2. The blocks are shuffled following an order derived from a secret (a key/seed).
@@ -17,10 +21,6 @@ For example, if the image is 800×600 pixels, valid block sizes could be 20, 50,
 If a non-compatible size is chosen, the process cannot work.
 
 **Note**: the block size must be specified both when generating the puzzle and when solving it.
-
-<p align="center">
-  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
-</p>
 
 ### Usage
 
