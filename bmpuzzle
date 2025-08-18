@@ -13,19 +13,19 @@ if __name__ == "__main__":
     # Common args (parent parser)
     common = ArgumentParser(add_help=False)
     common.add_argument("-i", "--input",
-                        help="Source Image filename",
+                        help="source Image filename",
                         type=str, required=True)
     common.add_argument("-o", "--output",
-                        help="Output Image filename",
+                        help="output Image filename",
                         type=str, required=True)
     common.add_argument("-s", "--secret",
-                        help="Secret value (integer value)",
+                        help="secret value (integer value)",
                         type=int, required=True)
     common.add_argument("-b", "--block-size",
-                        help="Block size in pixels, format 'widthxheight' (must evenly divide the image size)",
+                        help="block size in pixels, format 'widthxheight' (must evenly divide the image size)",
                         type=str)
     common.add_argument("-d", "--debug",
-                        help="Debug",
+                        help="debug",
                         action="store_true")
 
     # Subparsers
