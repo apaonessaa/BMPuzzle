@@ -63,7 +63,7 @@ An example:
 
 ```bash
 
-./bmpuzzle generator --input images/lena.bmp --output puzzles/100x100.bmp --secret 1234567890 --block-size 100x100
+./bmpuzzle generator --input lena.bmp --output puzzles/100x100.bmp --secret 1234567890 --block-size 100x100
 
 ```
 
