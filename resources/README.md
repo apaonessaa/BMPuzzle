@@ -83,13 +83,4 @@ An example:
 
 ```
 
-### Tests
-
-The secret used to generate the puzzles in the folder with the same name is `1234567890`.
-
-### TODO
-
-- DEBUG info
-- Data validation
-
 ---
