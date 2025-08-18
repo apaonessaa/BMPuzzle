@@ -4,9 +4,7 @@
 
 The core idea is to split the image into blocks, shuffle them according to a sequence generated from a **secret**, and then use the same secret to reconstruct the original image.
 
-<p align="center">
-  <img width="640" height="214" alt="puzzle" src="https://github.com/user-attachments/assets/a5cb54e8-b783-4177-8150-606861fd46b4" />
-</p>
+![bmpuzzle](./resources/bmpuzzle.png)
 
 ### How it works
 
