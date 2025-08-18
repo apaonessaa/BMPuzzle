@@ -28,7 +28,7 @@ If a non-compatible size is chosen, the process does not work.
 
 ```text
 
-bmpuzzle mode [-h] -i INPUT -o OUTPUT -s SECRET [-b BLOCK_SIZE] [-d]
+bmpuzzle mode [-h] -i INPUT -o OUTPUT -s SECRET -b BLOCK_SIZE [-d]
 
 Modes:
     generator
