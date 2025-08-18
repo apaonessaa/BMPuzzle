@@ -22,65 +22,36 @@ If a non-compatible size is chosen, the process does not work.
 
 **Note**: the block size must be specified both when generating the puzzle and when solving it.
 
-### Usage
-
-```text
-
-bmpuzzle mode [-h] -i INPUT -o OUTPUT -s SECRET -b BLOCK_SIZE [-d]
-
-Modes:
-    generator
-    solver
-
-Flags:
-  -h, --help            show this help message and exit
-
-  -i INPUT, --input INPUT
-                        source Image filename
-  
-  -o OUTPUT, --output OUTPUT
-                        output Image filename
-  
-  -s SECRET, --secret SECRET
-                        secret value (integer value)
-  
-  -b BLOCK_SIZE, --block-size BLOCK_SIZE
-                        block size in pixels, format 'widthxheight' (must evenly divide the image size)
-  
-  -d, --debug           debug
-
-```
+Below is an example of the tool's application.
 
 ### Generate a Puzzle
 
-```bash
-
-./bmpuzzle generator --input [source image] --output [output image] --secret [secret value] --block-size <block size [widthxheight]>
-
-```
-
-An example:
+In this example, we use the image `lena.bmp` with dimensions **1200x800**. A valid block size is **300x200**.
 
 ```bash
 
-./bmpuzzle generator --input lena.bmp --output puzzles/100x100.bmp --secret 1234567890 --block-size 100x100
+./bmpuzzle generator --input lena.bmp --output puzzles/300x200.bmp --secret 1234567890 --block-size 300x200
 
 ```
+
+![bmpuzzle generation](./gen.png)
 
 ### Solve a Puzzle
 
-```bash
-
-./bmpuzzle solver --input [source image] --output [output image] --secret [secret value] --block-size <block size [widthxheight]>
-
-```
-
-An example:
+First, solve the puzzle using the correct secret.
 
 ```bash
 
-./bmpuzzle solver --input puzzles/100x100.bmp --output results/100x100.bmp --secret 1234567890 --block-size 100x100
+./bmpuzzle solver --input puzzles/300x200.bmp --output results/300x200.bmp --secret 1234567890 --block-size 300x200
 
 ```
+
+![bmpuzzle solved](./solv.png)
+
+Whereas, if the key used for solving does not match the one used for generation, the puzzle will be shuffled.
+
+![bmpuzzle wrong key](./wrong_key.png)
 
 ---
+
+
