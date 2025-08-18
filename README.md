@@ -44,7 +44,7 @@ Flags:
                         output Image filename
   
   -s SECRET, --secret SECRET
-                        secret value (integer value)
+                        secret value
   
   -b BLOCK_SIZE, --block-size BLOCK_SIZE
                         block size in pixels, format 'widthxheight' (must evenly divide the image size)

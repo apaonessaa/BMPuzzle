@@ -19,8 +19,8 @@ if __name__ == "__main__":
                         help="output Image filename",
                         type=str, required=True)
     common.add_argument("-s", "--secret",
-                        help="secret value (integer value)",
-                        type=int, required=True)
+                        help="secret value",
+                        required=True)
     common.add_argument("-b", "--block-size",
                         help="block size in pixels, format 'widthxheight' (must evenly divide the image size)",
                         type=str, required=True)

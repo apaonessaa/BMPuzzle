@@ -74,7 +74,7 @@ class Puzzle():
         # Update the image with the transformed payload
         src.set_payload(dst_payload)
 
-    def run(self, mode: Mode, out: str, secret: int):
+    def run(self, mode: Mode, out: str, secret):
         # Generate a random sequence of block indices
         _, _, n = self.block.get_num()
         # Build the sequence
