@@ -20,7 +20,7 @@ The block size cannot be arbitrary: it must be a divisor of both the image width
 
 For example, if the image is 800×600 pixels, valid block sizes could be 20, 50, 100, etc., as long as they evenly divide both width and height.
 
-If a non-compatible size is chosen, the process does not work.
+If a non-compatible size is chosen, the process does not work correctly.
 
 **Note**: the block size must be specified both when generating the puzzle and when solving it.
 
