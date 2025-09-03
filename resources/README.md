@@ -6,13 +6,13 @@ The core idea is to split the image into blocks, shuffle them according to a seq
 
 ![bmpuzzle](./bmpuzzle.png)
 
-### **How it works**
+## **How it works**
 
 1. The image is divided into square blocks.
 2. The blocks are shuffled following an order derived from a secret (a key/seed).
 3. To rebuild the image, you need to provide the same secret: this ensures that the blocks are placed back in their original position.
 
-### **Block size selection**
+## **Block size selection**
 
 The block size cannot be arbitrary: it must be a divisor of both the image width and height.
 
@@ -24,7 +24,7 @@ If a non-compatible size is chosen, the process does not work correctly.
 
 Below is an example of the tool's application.
 
-### **Generate a Puzzle**
+## **Generate a Puzzle**
 
 In this example, we use the image `lena.bmp` with dimensions **1200x800**. A valid block size is **300x200**.
 
@@ -36,7 +36,7 @@ In this example, we use the image `lena.bmp` with dimensions **1200x800**. A val
 
 ![bmpuzzle generation](./gen.png)
 
-### **Solve a Puzzle**
+## **Solve a Puzzle**
 
 First, solve the puzzle using the correct secret.
 
