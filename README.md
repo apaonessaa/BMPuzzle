@@ -98,4 +98,12 @@ The secret used to generate the puzzles in the folder with the same name is `123
 - DEBUG info
 - Data validation
 
+## Credits
+
+This project was made by [@apaonessaa](https://github.com/apaonessaa).
+
+## License
+
+This repository is licensed under the GNU GPL v3.
+
 ---
